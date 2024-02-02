@@ -1,20 +1,21 @@
+
 public class Vehicle {
     private String color;
     private int capacity;
-    private String licensePlate;
+    private String licensePlateNo;
     private String year;
     private String model;
     private String make;
-    private boolean started;
-    private boolean wiperSwiped;
-
+    private Boolean started;
+    private Boolean wiperSwipped;
+    
     public Vehicle() {
     }
 
-    public Vehicle(String color, int capacity, String licensePlate, String year, String model, String make) {
+    public Vehicle(String color, int capacity, String licensePlateNo, String year, String model, String make) {
         this.color = color;
         this.capacity = capacity;
-        this.licensePlate = licensePlate;
+        this.licensePlateNo = licensePlateNo;
         this.year = year;
         this.model = model;
         this.make = make;
@@ -36,12 +37,12 @@ public class Vehicle {
         this.capacity = capacity;
     }
 
-    public String getLicensePlate() {
-        return licensePlate;
+    public String getLicensePlateNo() {
+        return licensePlateNo;
     }
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    public void setLicensePlateNo(String licensePlateNo) {
+        this.licensePlateNo = licensePlateNo;
     }
 
     public String getYear() {
@@ -70,8 +71,17 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle [color=" + color + ", capacity=" + capacity + ", licensePlate=" + licensePlate +
-                ", year=" + year + ", model=" + model + ", make=" + make + ", started=" + started + "]";
+        return "Vehicle [color=" + color + ", capacity=" + capacity + ", licensePlateNo=" + licensePlateNo + ", year="
+                + year + ", model=" + model + ", make=" + make + "]";
+    }
+
+    
+    public Boolean getStarted() {
+        return started;
+    }
+
+    public Boolean getWiperSwipped() {
+        return wiperSwipped;
     }
 
     public void start() {
@@ -84,15 +94,13 @@ public class Vehicle {
 
     public void honk() {
         System.out.println("Beep... Beep...");
-
     }
 
     public void startSwipe() {
-        this.started = true;
-    }
-
-    public void stopSwipe() {
-        this.started = false;
+        this.wiperSwipped = true;
     }
     
+    public void stopSwipe() {
+        this.wiperSwipped = false;
+    }
 }
